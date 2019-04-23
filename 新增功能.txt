@@ -1,0 +1,6 @@
+新加功能：
+1.去掉get,set方法，添加lombok注解
+2.添加listByIds，list，count方法
+3.添加***Cond类
+4.添加service已经实现类
+5.类注释和方法注释

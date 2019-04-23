@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库驱动:选择你的本地硬盘上面的数据库驱动包-->
+	<classPathEntry location="D:\project\generator-template\mysql-connector-java-5.1.46.jar"/>
+
+	   <!--<classPathEntry location="mysql-connector-java-5.1.46.jar"/>-->
+	
+    <context id="Mysql" targetRuntime="MyBatis3">
+	    
+		<!-- 注释用-->
+		<property name="author" value="guos"/>
+		
+		<!-- 表乐观锁列名-->
+		<property name="versions" value="version"/>
+		
+	    <!-- 添加缓存-->
+        <property name="Cache" value=""/>
+
+        <!-- 清空缓存-->
+        <property name="CacheDelete" value=""/>
+
+        <!-- 根据key清空缓存-->
+        <property name="CacheDeleteKey" value=""/>
+		
+		<!-- 要继承的page类所在包-->
+		<property name="page" value="com.tsyj.page.Page"/>
+		
+        <property name="javaFileEncoding" value="UTF-8"/>
+		
+		<!-- po要继承的page全路径-->
+		<!-- <property name="page" value="com.panda.sdk.Page"/>-->
+		
+		 <!-- 配置pojo的序列化 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		  <!-- 去掉get,set方法，添加Lombok注解-->
+		 <plugin type="org.mybatis.generator.plugins.LombokPlugin" >
+            <property name="hasLombok" value="true"/>
+        </plugin>
+		
+		
+		
+		 <!-- 
+			    BaseMethodPlugin插件(xml,service,business,controller,基础方法配置)
+				1.enableDeleteByPrimaryKey         				 生成delete方法
+				2.enableInsertSelective	        				 生成save方法
+				3.enableSelectByPrimaryKey	             		 生成get方法
+				4.enableUpdateByPrimaryKeySelective	         	 生成update方法
+				5.countByCondition	                  			 生成listByIds方法
+				6.listByCondition	         					 生成count方法
+			    7.listByCondition	         					 生成list方法
+		-->
+		<plugin type="org.mybatis.generator.plugins.BaseMethodPlugin">		
+			<!-- <property name="deleteByPrimaryKey" value="delete" />-->
+			<property name="insertSelective" value="save" />
+			<property name="selectByPrimaryKey" value="get" />
+			<property name="updateByPrimaryKeySelective" value="update" />
+			<property name="listByIds" value="listByIds"/>
+		    <property name="countByCondition" value="count"/>
+		    <property name="listByCondition" value="list"/>
+		</plugin>
+		
+		
+		
+		 <!-- 
+			ExtendModelPlugin插件(生成vo,cond)
+				1.generatorVo：          是否重新生成vo
+				2.voProject：	         vo所在模块
+				3.voPack：	             vo类所在包
+				4.voSuffix：	         vo类后缀
+				5.condProject：	         cond所在模块
+				6.condPack：	         cond类所在包
+				7.condSuffix:            cond类后缀
+				8.generatorPo:           是否重新生成po：     不写或者空或者false,不生成
+				9.generatorMapper:       是否重新生成Mapper:  不写或者空或者false,不生成
+				10.generatorXml:         是否重新生成Xml：    不写或者空或者false,不生成
+		-->
+		<plugin type="org.mybatis.generator.plugins.ExtendModelPlugin">
+						
+			<property name="voProject" value="D:\project\test\springboot-base\src\main\java" />
+	
+			<property name="voPack" value="com.tsyj.vo" />
+
+			<property name="voSuffix" value="VO" />
+			
+			
+			<property name="condProject" value="D:\project\test\springboot-base\src\main\java" />
+			
+			<property name="condPack" value="com.tsyj.cond" />
+			
+			<property name="condSuffix" value="Cond" />
+			
+			<property name="generatorPo" value="true" />
+			
+			<property name="generatorMapper" value="true" />
+			
+			<property name="generatorXml" value="true" />
+			
+			<property name="generatorVo" value="true" />
+			
+			<property name="generatorCond" value="true" />
+			
+		</plugin>
+		
+		
+		
+		 <!-- 
+			servcie生成插件
+				1.serviceProject：       接口所在模块
+				2.servicePack：	         接口所在包
+				3.remote：	             remote注解所在包
+				4.applicationName：	     Application类所在包
+				5.serviceImplProject：	 实现类所在模块
+				6.serviceImplPack：	     实现类所在包
+				7.creator                创建人姓名表字段
+				8.updater	             修改人姓名表字段
+				9.createTime	         创建时间表字段
+				10.updateTime	         修改时间表字段
+				11.userNamePack:	     获取用户名方法
+				12.datePack:	         日期格式化方法
+				13.exceptionPack:	     自定义异常类全路径
+				14.enaleVersions:	     是否用乐观锁查询
+				15.generatorBusiness:	 是否生成service
+				16.mapByIds:	         生成mapByIds方法
+				17.map:	                 生成map方法
+				18.listId:	             生成listId方法
+				19.saveAndReturnId:	     生成插入返回id方法
+				20.generatorService      是否生成service类
+		-->
+		<plugin type="org.mybatis.generator.plugins.ServicePlugin">
+		
+			<property name="serviceProject" value="D:\project\test\springboot-base\src\main\java" />
+	
+			<property name="servicePack" value="com.tsyj.service" />
+			
+		    <property name="remote" value="" />
+		  
+		    <property name="applicationName" value=""/>
+			
+			<property name="serviceImplProject" value="D:\project\test\springboot-base\src\main\java" />
+			
+			<property name="serviceImplPack" value="com.tsyj.service.impl" />
+
+
+			<property name="creator" value="creator" />			
+			<property name="updater" value="updater" />		
+			<property name="create_time" value="create_time" />			
+			<property name="update_time" value="update_time" />		
+			<property name="userNameMethod" value="" />	
+			<property name="dateMethod" value="" />	
+			<property name="exceptionPack" value="" />	
+			<property name="enableVersions" value="true"/>	
+				
+			
+		    <property name="mapByIds" value="mapByIds"/>
+		
+		    <property name="map" value="map"/>
+		
+            <property name="listId" value="listId"/>
+			
+			<property name="saveAndGet" value="saveAndGet"/>
+			
+			<property name="generatorService" value="true" />
+		</plugin>
+		
+		
+		
+		
+		<!-- 
+			businessPlugin生成插件
+				1.remoteResource：	            remoteResource类所在包
+				2.businessProject：	            business类所在模块
+				3.businessPack：	            business类所在包
+				5.businessImplProject：	        business实现类所在模块
+				6.businessImplPack：	        business实现类所在包
+				7.businessSuffix                business类后缀
+				8.generatorBusiness:	        是否生成business
+		-->
+		<plugin type="org.mybatis.generator.plugins.BusinessPlugin">	
+			
+		    <property name="remoteResource" value="" />
+					
+			<property name="businessProject" value="D:\project\test\springboot-base\src\main\java" />
+			
+			<property name="businessPack" value="com.tsyj.business" />
+			
+			<property name="businessImplProject" value="D:\project\test\springboot-base\src\main\java" />
+			
+			<property name="businessImplPack" value="com.tsyj.business.impl" />
+			
+			<property name="businessSuffix" value="Business" />
+			
+			<property name="generatorBusiness" value="true" />
+			
+		</plugin>
+		
+		
+		
+		
+		
+		<!-- 
+			controller生成插件
+				1.controllerProject：           controller所在模块
+				2.controllerPack：	            controller所在包
+				3.controllerSuffix：	        controller类后缀
+				4.responseMethod	            Result类方法
+				5.baseController:	            要继承的基础controller
+				6.generatorController:	        是否生成controller
+		-->
+		<plugin type="org.mybatis.generator.plugins.ControllerPlugin">
+		
+			<property name="controllerProject" value="D:\project\test\springboot-base\src\main\java" />
+	
+			<property name="controllerPack" value="com.tsyj.controller" />
+
+			<property name="controllerSuffix" value="Controller" />
+			
+			<property name="responseMethod" value="com.tsyj.response.Result:success($)|fail($)|success($,$)"/>
+			
+			<property name="baseController" value="" />
+			
+			<property name="generatorController" value="true" />
+			
+		</plugin>
+		
+		
+		
+        <commentGenerator type="org.mybatis.generator.MyCommentGenerator">
+            <property name="suppressDate" value="true"/>
+			
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="false"/>
+			
+			<!-- 自定义注释 -->
+			<property name="addRemarkComments" value="true" />
+					
+        </commentGenerator>
+        <!--数据库链接URL，用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/tsyj?characterEncoding=utf8&amp;useInformationSchema=true&amp;useSSL=false" userId="root"
+                        password="root">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置-->
+        <javaModelGenerator targetPackage="com.tsyj.po" targetProject="D:\project\test\springboot-base\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="D:\project\test\springboot-base\src\main\resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.tsyj.mapper" targetProject="D:\project\test\springboot-base\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
+        <table tableName="user" domainObjectName="User" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+			  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
+	    </table>
+    </context>
+</generatorConfiguration>
