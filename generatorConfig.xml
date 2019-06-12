@@ -171,8 +171,9 @@
 		<!-- 
 			businessPlugin生成插件
 				1.remoteResource：	            remoteResource类所在包
-				2.businessProject：	            business类所在模块
-				3.businessPack：	            business类所在包
+				2.modelConvertUtils：	            对象转换类所在包
+				3.businessProject：	            business类所在模块
+				4.businessPack：	            business类所在包
 				5.businessImplProject：	        business实现类所在模块
 				6.businessImplPack：	        business实现类所在包
 				7.businessSuffix                business类后缀
@@ -181,6 +182,8 @@
 		<plugin type="org.mybatis.generator.plugins.BusinessPlugin">	
 			
 		    <property name="remoteResource" value="" />
+			
+			<property name="modelConvertUtils" value="com.tsyj.utils.ModelConvertUtils" />
 					
 			<property name="businessProject" value="D:\project\test\springboot-base\src\main\java" />
 			
