@@ -44,7 +44,7 @@
 		
 		 <!-- 
 			    BaseMethodPlugin插件(xml,service,business,controller,基础方法配置)
-				1.enableDeleteByPrimaryKey         				 生成delete方法
+				1.deleteByCondition        				 生成物理删除方法
 				2.enableInsertSelective	        				 生成save方法
 				3.enableSelectByPrimaryKey	             		 生成get方法
 				4.enableUpdateByPrimaryKeySelective	         	 生成update方法
@@ -53,7 +53,7 @@
 			    7.listByCondition	         					 生成list方法
 		-->
 		<plugin type="org.mybatis.generator.plugins.BaseMethodPlugin">		
-			<!-- <property name="deleteByPrimaryKey" value="delete" />-->
+		    <property name="deleteByCondition" value="realDelete" />
 			<property name="insertSelective" value="save" />
 			<property name="selectByPrimaryKey" value="get" />
 			<property name="updateByPrimaryKeySelective" value="update" />
@@ -167,17 +167,16 @@
 		
 		
 		
-		
 		<!-- 
 			businessPlugin生成插件
 				1.remoteResource：	            remoteResource类所在包
-				2.modelConvertUtils：	            对象转换类所在包
-				3.businessProject：	            business类所在模块
-				4.businessPack：	            business类所在包
+				2.businessProject：	            business类所在模块
+				3.businessPack：	            business类所在包
 				5.businessImplProject：	        business实现类所在模块
 				6.businessImplPack：	        business实现类所在包
 				7.businessSuffix                business类后缀
-				8.generatorBusiness:	        是否生成business
+				8.doBatchMethod                 是否生成doBatch方法
+				9.generatorBusiness:	        是否生成business
 		-->
 		<plugin type="org.mybatis.generator.plugins.BusinessPlugin">	
 			
@@ -194,6 +193,8 @@
 			<property name="businessImplPack" value="com.tsyj.business.impl" />
 			
 			<property name="businessSuffix" value="Business" />
+			
+			<property name="doBatchMethod" value="" />
 			
 			<property name="generatorBusiness" value="true" />
 			
