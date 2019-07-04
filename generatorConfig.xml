@@ -53,7 +53,7 @@
 			    7.listByCondition	         					 生成list方法
 		-->
 		<plugin type="org.mybatis.generator.plugins.BaseMethodPlugin">		
-		    <property name="deleteByCondition" value="realDelete" />
+		    <property name="deleteByCondition" value="" />
 			<property name="insertSelective" value="save" />
 			<property name="selectByPrimaryKey" value="get" />
 			<property name="updateByPrimaryKeySelective" value="update" />
