@@ -262,9 +262,13 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
+		  <!-- 
+		    1.enableBusiness: 是否生成business
+			2.enableController: 是否生成controller
+		   -->
         <table tableName="user" domainObjectName="User" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
+               selectByExampleQueryId="false" enableBusiness="true" enableController="true">
 			  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 	    </table>
     </context>
