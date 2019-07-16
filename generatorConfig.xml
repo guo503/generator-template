@@ -162,6 +162,8 @@
 			
 			<property name="saveAndGet" value="saveAndGet"/>
 			
+			<property name="enableLogger" value="true"/>
+			
 			<property name="generatorService" value="true" />
 		</plugin>
 		
@@ -176,7 +178,7 @@
 				6.businessImplPack：	        business实现类所在包
 				7.businessSuffix                business类后缀
 				8.doBatchMethod                 是否生成doBatch方法
-				9.generatorBusiness:	        是否生成business
+				9.enableLogger                  是否生成logger日志
 		-->
 		<plugin type="org.mybatis.generator.plugins.BusinessPlugin">	
 			
@@ -196,6 +198,8 @@
 			
 			<property name="doBatchMethod" value="" />
 			
+			<property name="enableLogger" value="true"/>
+			
 		</plugin>
 		
 		
@@ -209,8 +213,8 @@
 				3.controllerSuffix：	        controller类后缀
 				4.responseMethod	            Result类方法
 				5.baseController:	            要继承的基础controller
-				6.generatorController:	        是否生成controller
-		-->
+				6.enableLogger                  是否生成logger日志
+		--> 
 		<plugin type="org.mybatis.generator.plugins.ControllerPlugin">
 		
 			<property name="controllerProject" value="D:\project\test\springboot-base\src\main\java" />
@@ -222,6 +226,8 @@
 			<property name="responseMethod" value="com.tsyj.response.Result:success($)|fail($)|success($,$)"/>
 			
 			<property name="baseController" value="" />
+			
+			<property name="enableLogger" value="true"/>
 			
 		</plugin>
 		
