@@ -13,9 +13,6 @@
 		<!-- 注释用-->
 		<property name="author" value="guos"/>
 		
-		<!-- 表乐观锁列名-->
-		<property name="versions" value="version"/>
-		
 	    <!-- 添加缓存-->
         <property name="Cache" value=""/>
 
@@ -64,18 +61,21 @@
 		
 		
 		
-		 <!-- 
-			ExtendModelPlugin插件(生成vo,cond)
+		   <!-- 
+			   ExtendModelPlugin插件(生成vo,cond,mapper配置)
 				1.generatorVo：          是否重新生成vo
 				2.voProject：	         vo所在模块
 				3.voPack：	             vo类所在包
 				4.voSuffix：	         vo类后缀
-				5.condProject：	         cond所在模块
-				6.condPack：	         cond类所在包
-				7.condSuffix:            cond类后缀
-				8.generatorPo:           是否重新生成po：     不写或者空或者false,不生成
-				9.generatorMapper:       是否重新生成Mapper:  不写或者空或者false,不生成
-				10.generatorXml:         是否重新生成Xml：    不写或者空或者false,不生成
+				5.condSuffix:            cond类后缀
+				6.generatorPo:           是否重新生成po：     不写或者空或者false,不生成
+				7.generatorMapper:       是否重新生成Mapper:  不写或者空或者false,不生成
+				8.generatorXml:          是否重新生成Xml：    不写或者空或者false,不生成
+				9.mapper:                mapper继承的基类
+			    9.softDeleteMapper:      mapper继承的逻辑删除基类
+				10.table:                po类表注释
+				11.condition:            Conditionc查询类
+				
 		-->
 		<plugin type="org.mybatis.generator.plugins.ExtendModelPlugin">
 						
@@ -85,10 +85,7 @@
 
 			<property name="voSuffix" value="VO" />
 			
-			
-			<property name="condProject" value="D:\project\test\springboot-base\src\main\java" />
-			
-			<property name="condPack" value="com.tsyj.cond" />
+	
 			
 			<property name="condSuffix" value="Cond" />
 			
@@ -100,7 +97,15 @@
 			
 			<property name="generatorVo" value="true" />
 			
-			<property name="generatorCond" value="true" />
+		
+			<property name="mapper" value="mybatis.base.mapper.Mapper" />
+					
+			<property name="softDeleteMapper" value="mybatis.base.mapper.SoftDeleteMapper" />
+							
+		    <property name="table" value="mybatis.core.annotation.Table" />
+			
+			<property name="condition" value="mybatis.core.entity.Condition" />
+		
 			
 		</plugin>
 		
@@ -151,7 +156,6 @@
 			<property name="userNameMethod" value="" />	
 			<property name="dateMethod" value="" />	
 			<property name="exceptionPack" value="" />	
-			<property name="enableVersions" value="true"/>	
 				
 			
 		    <property name="mapByIds" value="mapByIds"/>
@@ -162,7 +166,7 @@
 			
 			<property name="saveAndGet" value="saveAndGet"/>
 			
-			<property name="enableLogger" value="true"/>
+			<property name="enableLogger" value="false"/>
 			
 			<property name="generatorService" value="true" />
 		</plugin>
@@ -264,11 +268,12 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
-		  <!-- 
+		   <!-- 
 		    1.enableBusiness: 是否生成business
 			2.enableController: 是否生成controller
+			3.versions乐观锁列名
 		   -->
-        <table tableName="user" domainObjectName="User"  enableBusiness="true" enableController="true">
+        <table tableName="user" domainObjectName="User"  enableBusiness="true" enableController="true" versions="">
 			  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 	    </table>
     </context>
