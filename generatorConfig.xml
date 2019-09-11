@@ -61,7 +61,7 @@
 		
 		
 		
-		   <!-- 
+		  <!-- 
 			   ExtendModelPlugin插件(生成vo,cond,mapper配置)
 				1.generatorVo：          是否重新生成vo
 				2.voProject：	         vo所在模块
@@ -74,18 +74,18 @@
 				9.mapper:                mapper继承的基类
 			    9.softDeleteMapper:      mapper继承的逻辑删除基类
 				10.table:                po类表注释
-				11.condition:            Conditionc查询类
+				11.id:                   主键注解
+				13.condition:            Conditionc查询类
 				
 		-->
 		<plugin type="org.mybatis.generator.plugins.ExtendModelPlugin">
 						
-			<property name="voProject" value="D:\project\test\springboot-base\src\main\java" />
+			<property name="voProject" value="D:\project\test\spi-test\controller\src\main\java" />
 	
 			<property name="voPack" value="com.tsyj.vo" />
 
 			<property name="voSuffix" value="VO" />
 			
-	
 			
 			<property name="condSuffix" value="Cond" />
 			
@@ -97,15 +97,16 @@
 			
 			<property name="generatorVo" value="true" />
 			
-		
+			
 			<property name="mapper" value="mybatis.base.mapper.Mapper" />
 					
 			<property name="softDeleteMapper" value="mybatis.base.mapper.SoftDeleteMapper" />
 							
 		    <property name="table" value="mybatis.core.annotation.Table" />
 			
+			<property name="id" value="mybatis.core.annotation.Id" />
+			
 			<property name="condition" value="mybatis.core.entity.Condition" />
-		
 			
 		</plugin>
 		
