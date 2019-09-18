@@ -13,15 +13,6 @@
 		<!-- 注释用-->
 		<property name="author" value="guos"/>
 		
-	    <!-- 添加缓存-->
-        <property name="Cache" value=""/>
-
-        <!-- 清空缓存-->
-        <property name="CacheDelete" value=""/>
-
-        <!-- 根据key清空缓存-->
-        <property name="CacheDeleteKey" value=""/>
-		
 		<!-- 要继承的page类所在包-->
 		<property name="page" value="com.tsyj.page.Page"/>
 		
