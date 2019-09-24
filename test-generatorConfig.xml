@@ -175,6 +175,7 @@
 				7.businessSuffix                business类后缀
 				8.doBatchMethod                 是否生成doBatch方法
 				9.enableLogger                  是否生成logger日志
+				10.exceptionPack:	            自定义异常类全路径
 		-->
 		<plugin type="org.mybatis.generator.plugins.BusinessPlugin">	
 			
@@ -195,6 +196,8 @@
 			<property name="doBatchMethod" value="" />
 			
 			<property name="enableLogger" value="true"/>
+			
+			<property name="exceptionPack" value="" />	
 			
 		</plugin>
 		
