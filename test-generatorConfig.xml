@@ -71,7 +71,7 @@
 		-->
 		<plugin type="org.mybatis.generator.plugins.ExtendModelPlugin">
 						
-			<property name="voProject" value="D:\project\test\spi-test\controller\src\main\java" />
+			<property name="voProject" value="D:\project\test\springboot-base\src\main\java" />
 	
 			<property name="voPack" value="com.tsyj.vo" />
 
@@ -125,6 +125,7 @@
 				18.listId:	             生成listId方法
 				19.saveAndReturnId:	     生成插入返回id方法
 				20.generatorService      是否生成service类
+			    21.enableVersions        是否启用乐观锁,只有下面<table></table>配有versions才行
 		-->
 		<plugin type="org.mybatis.generator.plugins.ServicePlugin">
 		
@@ -145,7 +146,7 @@
 			<property name="updater" value="updater" />		
 			<property name="create_time" value="create_time" />			
 			<property name="update_time" value="update_time" />		
-			<property name="userNameMethod" value="" />	
+			<property name="userNameMethod" value="com.tsyj.consts.UserConst.DEFAULT_NAME" />	
 			<property name="dateMethod" value="" />	
 			<property name="exceptionPack" value="" />	
 				
@@ -159,6 +160,8 @@
 			<property name="saveAndGet" value="saveAndGet"/>
 			
 			<property name="enableLogger" value="false"/>
+			
+		    <property name="enableVersions" value="true"/>
 			
 			<property name="generatorService" value="true" />
 		</plugin>
@@ -193,9 +196,9 @@
 			
 			<property name="businessSuffix" value="Business" />
 			
-			<property name="doBatchMethod" value="" />
+			<property name="doBatchMethod" value="doBatch" />
 			
-			<property name="enableLogger" value="true"/>
+			<property name="enableLogger" value="false"/>
 			
 			<property name="exceptionPack" value="" />	
 			
@@ -226,7 +229,7 @@
 			
 			<property name="baseController" value="" />
 			
-			<property name="enableLogger" value="true"/>
+			<property name="enableLogger" value="false"/>
 			
 		</plugin>
 		
@@ -250,7 +253,7 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!-- 生成模型的包名和位置-->
-        <javaModelGenerator targetPackage="com.tsyj.po" targetProject="D:\project\test\springboot-base\src\main\java">
+        <javaModelGenerator targetPackage="com.tsyj.model" targetProject="D:\project\test\springboot-base\src\main\java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -268,7 +271,7 @@
 			2.enableController: 是否生成controller
 			3.versions乐观锁列名
 		   -->
-        <table tableName="user" domainObjectName="User"  enableBusiness="true" enableController="true" versions="">
+        <table tableName="user" domainObjectName="User"  enableBusiness="true" enableController="true" versions="version">
 			  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 	    </table>
     </context>
