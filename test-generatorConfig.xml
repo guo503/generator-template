@@ -67,6 +67,7 @@
 				10.table:                po类表注释
 				11.id:                   主键注解
 				13.condition:            Conditionc查询类
+				14.limitCondition:            Conditionc询类
 				
 		-->
 		<plugin type="org.mybatis.generator.plugins.ExtendModelPlugin">
@@ -98,6 +99,8 @@
 			<property name="id" value="mybatis.core.annotation.Id" />
 			
 			<property name="condition" value="mybatis.core.entity.Condition" />
+			
+			<property name="limitCondition" value="mybatis.core.entity.LimitCondition" />
 			
 		</plugin>
 		
