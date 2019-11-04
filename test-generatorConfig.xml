@@ -274,8 +274,20 @@
 			2.enableController: 是否生成controller
 			3.versions乐观锁列名
 		   -->
-        <table tableName="user" domainObjectName="User"  enableBusiness="true" enableController="true" versions="version">
-			  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
-	    </table>
+       <table tableName="sys_user" domainObjectName="SysUser" enableBusiness="true" enableController="true" versions="versions">
+				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
+			</table>
+			 <table tableName="sys_menu" domainObjectName="SysMenu"  enableBusiness="false" enableController="true" versions="versions">
+				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
+			</table>
+				<table tableName="sys_role" domainObjectName="SysRole" enableBusiness="true" enableController="true" versions="versions">
+				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
+			</table>
+			 <table tableName="sys_role_menu" domainObjectName="SysRoleMenu"  enableBusiness="true" enableController="true" versions="versions">
+				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
+			</table>
+			 <table tableName="sys_user_role" domainObjectName="SysUserRole"  enableBusiness="true" enableController="true" versions="versions">
+				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
+			</table>
     </context>
 </generatorConfiguration>
