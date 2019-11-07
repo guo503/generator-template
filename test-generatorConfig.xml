@@ -128,7 +128,6 @@
 				18.listId:	             生成listId方法
 				19.saveAndReturnId:	     生成插入返回id方法
 				20.generatorService      是否生成service类
-			    21.enableVersions        是否启用乐观锁,只有下面<table></table>配有versions才行
 		-->
 		<plugin type="org.mybatis.generator.plugins.ServicePlugin">
 		
@@ -163,8 +162,6 @@
 			<property name="saveAndGet" value="saveAndGet"/>
 			
 			<property name="enableLogger" value="false"/>
-			
-		    <property name="enableVersions" value="true"/>
 			
 			<property name="generatorService" value="true" />
 		</plugin>
@@ -273,20 +270,21 @@
 		    1.enableBusiness: 是否生成business
 			2.enableController: 是否生成controller
 			3.versions乐观锁列名
-		   -->
-       <table tableName="sys_user" domainObjectName="SysUser" enableBusiness="true" enableController="true" versions="versions">
+			4.enableVersions       是否启用乐观锁,只有versions配置才行
+	 	   -->
+           <table tableName="sys_user" domainObjectName="SysUser" enableBusiness="true" enableController="true" versions="versions" enableVersions="true">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
-			 <table tableName="sys_menu" domainObjectName="SysMenu"  enableBusiness="false" enableController="true" versions="versions">
+			 <table tableName="sys_menu" domainObjectName="SysMenu"  enableBusiness="false" enableController="true" versions="versions" enableVersions="false">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
-				<table tableName="sys_role" domainObjectName="SysRole" enableBusiness="true" enableController="true" versions="versions">
+				<table tableName="sys_role" domainObjectName="SysRole" enableBusiness="true" enableController="true" versions="versions" enableVersions="false">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
-			 <table tableName="sys_role_menu" domainObjectName="SysRoleMenu"  enableBusiness="true" enableController="true" versions="versions">
+			 <table tableName="sys_role_menu" domainObjectName="SysRoleMenu"  enableBusiness="true" enableController="true" versions="versions" enableVersions="false">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
-			 <table tableName="sys_user_role" domainObjectName="SysUserRole"  enableBusiness="true" enableController="true" versions="versions">
+			 <table tableName="sys_user_role" domainObjectName="SysUserRole"  enableBusiness="true" enableController="true" versions="versions" enableVersions="false">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
     </context>
