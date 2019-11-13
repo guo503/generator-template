@@ -65,9 +65,11 @@
 				9.mapper:                mapper继承的基类
 			    9.softDeleteMapper:      mapper继承的逻辑删除基类
 				10.table:                po类表注释
-				11.id:                   主键注解
-				13.condition:            Conditionc查询类
-				14.limitCondition:            Conditionc询类
+		        11.id:                   主键注解
+				12.version:              乐观锁注解
+				13.condition:            Condition查询类
+				14.limitCondition:       limitCondition查询类
+				15.logicDelete           逻辑删除注解
 				
 		-->
 		<plugin type="org.mybatis.generator.plugins.ExtendModelPlugin">
@@ -97,6 +99,10 @@
 		    <property name="table" value="mybatis.core.annotation.Table" />
 			
 			<property name="id" value="mybatis.core.annotation.Id" />
+			
+			<property name="version" value="mybatis.core.annotation.Version" />
+			
+		    <property name="logicDelete" value="mybatis.core.annotation.LogicDelete" />
 			
 			<property name="condition" value="mybatis.core.entity.Condition" />
 			
@@ -266,25 +272,35 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
-		   <!-- 
-		    1.enableBusiness: 是否生成business
-			2.enableController: 是否生成controller
-			3.versions乐观锁列名
+		  <!--  
+		    1.enableBusiness:      是否生成business
+			2.enableController:    是否生成controller
+			3.versions             乐观锁列名
 			4.enableVersions       是否启用乐观锁,只有versions配置才行
-	 	   -->
-           <table tableName="sys_user" domainObjectName="SysUser" enableBusiness="true" enableController="true" versions="versions" enableVersions="true">
+			5.逻辑删除列
+		   -->
+		<!--
+			<table tableName="user" domainObjectName="User" enableBusiness="true" enableController="true" versions="version">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
-			 <table tableName="sys_menu" domainObjectName="SysMenu"  enableBusiness="false" enableController="true" versions="versions" enableVersions="false">
+			 <table tableName="country_code" domainObjectName="CountryCode"  enableBusiness="true" enableController="true" versions="">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
-				<table tableName="sys_role" domainObjectName="SysRole" enableBusiness="true" enableController="true" versions="versions" enableVersions="false">
+		-->
+		
+			<table tableName="sys_user" domainObjectName="SysUser" enableBusiness="true" enableController="true" versions="versions" enableVersions="true" delCol="is_del">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
-			 <table tableName="sys_role_menu" domainObjectName="SysRoleMenu"  enableBusiness="true" enableController="true" versions="versions" enableVersions="false">
+			 <table tableName="sys_menu" domainObjectName="SysMenu"  enableBusiness="false" enableController="true" versions="versions" enableVersions="false" delCol="is_del">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
-			 <table tableName="sys_user_role" domainObjectName="SysUserRole"  enableBusiness="true" enableController="true" versions="versions" enableVersions="false">
+				<table tableName="sys_role" domainObjectName="SysRole" enableBusiness="true" enableController="true" versions="versions" enableVersions="false" delCol="is_del">
+				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
+			</table>
+			 <table tableName="sys_role_menu" domainObjectName="SysRoleMenu"  enableBusiness="true" enableController="true" versions="versions" enableVersions="false" delCol="is_del">
+				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
+			</table>
+			 <table tableName="sys_user_role" domainObjectName="SysUserRole"  enableBusiness="true" enableController="true" versions="versions" enableVersions="false" delCol="is_del">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
     </context>
