@@ -288,19 +288,19 @@
 			</table>
 		-->
 		
-			<table tableName="sys_user" domainObjectName="SysUser" enableBusiness="true" enableController="true" versions="versions" enableVersions="true" delCol="is_del">
+			<table tableName="sys_user" domainObjectName="SysUser" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="true" delCol="is_del">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
-			 <table tableName="sys_menu" domainObjectName="SysMenu"  enableBusiness="false" enableController="true" versions="versions" enableVersions="false" delCol="is_del">
+			 <table tableName="sys_menu" domainObjectName="SysMenu"  enableBusiness="false" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
-				<table tableName="sys_role" domainObjectName="SysRole" enableBusiness="true" enableController="true" versions="versions" enableVersions="false" delCol="is_del">
+				<table tableName="sys_role" domainObjectName="SysRole" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
-			 <table tableName="sys_role_menu" domainObjectName="SysRoleMenu"  enableBusiness="true" enableController="true" versions="versions" enableVersions="false" delCol="is_del">
+			 <table tableName="sys_role_menu" domainObjectName="SysRoleMenu"  enableBusiness="true" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
-			 <table tableName="sys_user_role" domainObjectName="SysUserRole"  enableBusiness="true" enableController="true" versions="versions" enableVersions="false" delCol="is_del">
+			 <table tableName="sys_user_role" domainObjectName="SysUserRole"  enableBusiness="true" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del">
 				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
 			</table>
     </context>
