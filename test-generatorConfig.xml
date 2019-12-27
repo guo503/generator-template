@@ -133,7 +133,6 @@
 				17.map:	                 生成map方法
 				18.listId:	             生成listId方法
 				19.saveAndReturnId:	     生成插入返回id方法
-				20.generatorService      是否生成service类
 		-->
 		<plugin type="org.mybatis.generator.plugins.ServicePlugin">
 		
@@ -168,8 +167,7 @@
 			<property name="saveAndGet" value="saveAndGet"/>
 			
 			<property name="enableLogger" value="false"/>
-			
-			<property name="generatorService" value="true" />
+	
 		</plugin>
 		
 		
@@ -279,29 +277,11 @@
 			4.enableVersions       是否启用乐观锁,只有versions配置才行
 			5.逻辑删除列
 		   -->
-		<!--
-			<table tableName="user" domainObjectName="User" enableBusiness="true" enableController="true" versions="version">
-				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
-			</table>
-			 <table tableName="country_code" domainObjectName="CountryCode"  enableBusiness="true" enableController="true" versions="">
-				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
-			</table>
-		-->
-		
-			<table tableName="sys_user" domainObjectName="SysUser" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="true" delCol="is_del">
-				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
-			</table>
-			 <table tableName="sys_menu" domainObjectName="SysMenu"  enableBusiness="false" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del">
-				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
-			</table>
-				<table tableName="sys_role" domainObjectName="SysRole" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del">
-				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
-			</table>
-			 <table tableName="sys_role_menu" domainObjectName="SysRoleMenu"  enableBusiness="true" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del">
-				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
-			</table>
-			 <table tableName="sys_user_role" domainObjectName="SysUserRole"  enableBusiness="true" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del">
-				  <generatedKey column="ID" sqlStatement="mysql" identity="true" />
-			</table>
+			<table tableName="sys_user" domainObjectName="" enableService="true" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="true" delCol="is_del"/>
+			<table tableName="sys_menu" domainObjectName=""  enableService="true" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del"/>
+			<table tableName="sys_role" domainObjectName="" enableService="true" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del"/>		
+			<table tableName="sys_role_menu" domainObjectName="" enableService="true" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del"/>
+			<table tableName="sys_user_role" domainObjectName=""  enableService="true" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del"/>
+			
     </context>
 </generatorConfiguration>
