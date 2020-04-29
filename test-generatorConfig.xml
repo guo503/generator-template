@@ -41,13 +41,15 @@
 			    7.listByCondition	         					 生成list方法
 		-->
 		<plugin type="org.mybatis.generator.plugins.BaseMethodPlugin">		
-		    <property name="deleteByCondition" value="" />
-			<property name="insertSelective" value="save" />
-			<property name="selectByPrimaryKey" value="get" />
-			<property name="updateByPrimaryKeySelective" value="update" />
-			<property name="listByIds" value="listByIds"/>
-		    <property name="countByCondition" value="count"/>
-		    <property name="listByCondition" value="list"/>
+		    <prop name="deleteByCondition" value="" enable="true"/>
+			<prop name="insertSelective" value="save" enable="true"/>
+			<prop name="selectByPrimaryKey" value="get" enable="true"/>
+			<prop name="updateByPrimaryKeySelective" value="update" enable="true"/>
+			<prop name="listByIds" value="listByIds" enable="true"/>
+		    <prop name="count" value="count" enable="true"/>
+		    <prop name="list" value="list" enable="true"/>
+			<prop name="countByCondition" value="countByCondition" enable="true"/>
+		    <prop name="listByCondition" value="listByCondition" enable="true"/>
 		</plugin>
 		
 		
@@ -156,18 +158,13 @@
 			<property name="userNameMethod" value="com.tsyj.consts.UserConst.DEFAULT_NAME" />	
 			<property name="dateMethod" value="" />	
 			<property name="exceptionPack" value="" />	
+			<property name="enableLogger" value="false"/>
 				
 			
-		    <property name="mapByIds" value="mapByIds"/>
-		
-		    <property name="map" value="map"/>
-		
-            <property name="listId" value="listId"/>
-			
-			<property name="saveAndGet" value="saveAndGet"/>
-			
-			<property name="enableLogger" value="false"/>
-	
+		    <prop name="mapByIds" value="mapByIds" enable="true"/>
+		    <prop name="map" value="map" enable="true"/>
+            <prop name="listId" value="listId" enable="true"/>
+			<prop name="saveAndGet" value="saveAndGet" enable="true"/>
 		</plugin>
 		
 		
@@ -199,12 +196,12 @@
 			<property name="businessImplPack" value="com.tsyj.business.impl" />
 			
 			<property name="businessSuffix" value="Business" />
-			
-			<property name="doBatchMethod" value="doBatch" />
-			
+						
 			<property name="enableLogger" value="false"/>
 			
 			<property name="exceptionPack" value="" />	
+			
+			<prop name="doBatchMethod" value="doBatch" enable="true"/>
 			
 		</plugin>
 		
