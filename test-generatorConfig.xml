@@ -76,42 +76,73 @@
 		-->
 		<plugin type="org.mybatis.generator.plugins.ExtendModelPlugin">
 						
-			<property name="voProject" value="D:\project\test\springboot-base\src\main\java" />
+			<prop name="voProject" value="D:\project\test\springboot-base\src\main\java" enable=""/>
 	
-			<property name="voPack" value="com.tsyj.vo" />
+			<prop name="voPack" value="com.tsyj.vo" enable=""/>
 
-			<property name="voSuffix" value="VO" />
+			<prop name="voSuffix" value="VO" enable=""/>
 			
 			
-			<property name="condSuffix" value="Cond" />
+			<prop name="generatorPo" value="true" enable=""/>
 			
-			<property name="generatorPo" value="true" />
+			<prop name="generatorMapper" value="true" enable=""/>
 			
-			<property name="generatorMapper" value="true" />
+			<prop name="generatorXml" value="true" enable=""/>
 			
-			<property name="generatorXml" value="true" />
-			
-			<property name="generatorVo" value="true" />
+			<prop name="generatorVo" value="true" enable=""/>
 			
 			
-			<property name="mapper" value="mybatis.base.mapper.Mapper" />
+			<prop name="mapper" value="mybatis.base.mapper.Mapper" enable=""/>
 					
-			<property name="softDeleteMapper" value="mybatis.base.mapper.SoftDeleteMapper" />
+			<prop name="softDeleteMapper" value="mybatis.base.mapper.SoftDeleteMapper" enable=""/>
 							
-		    <property name="table" value="mybatis.core.annotation.Table" />
+		    <prop name="table" value="mybatis.core.annotation.Table" enable=""/>
 			
-			<property name="id" value="mybatis.core.annotation.Id" />
+			<prop name="id" value="mybatis.core.annotation.Id" enable=""/>
 			
-			<property name="version" value="mybatis.core.annotation.Version" />
+			<prop name="version" value="mybatis.core.annotation.Version" enable=""/>
 			
-		    <property name="logicDelete" value="mybatis.core.annotation.LogicDelete" />
+		    <prop name="logicDelete" value="mybatis.core.annotation.LogicDelete" enable=""/>
 			
-			<property name="condition" value="mybatis.core.entity.Condition" />
+			<prop name="condition" value="mybatis.core.entity.Condition" enable=""/>
 			
-			<property name="limitCondition" value="mybatis.core.entity.LimitCondition" />
+			<prop name="limitCondition" value="mybatis.core.entity.LimitCondition" enable=""/>
 			
 		</plugin>
 		
+		
+		
+		
+	    <plugin type="org.mybatis.generator.plugins.ManagePlugin">
+		
+		    <prop name="manageProject" value="D:\project\test\springboot-base\src\main\java" enable="true"/>
+			
+			<prop name="manageImplProject" value="D:\project\test\springboot-base\src\main\java" enable="true"/>
+	
+			<prop name="managePack" value="com.tsyj.service.business" enable="true"/>
+			
+			<prop name="manageImplPack" value="com.tsyj.service.business.impl" enable="true"/>
+		     
+			<prop name="manageSuffix" value="Business" enable="true"/>
+
+
+			<prop name="creator" value="creator" enable=""/>			
+			<prop name="updater" value="updater" enable=""/>		
+			<prop name="create_time" value="create_time" enable=""/>			
+			<prop name="update_time" value="update_time" enable=""/>		
+			<prop name="userNameMethod" value="com.tsyj.consts.UserConst.DEFAULT_NAME" enable=""/>	
+			<prop name="dateMethod" value="" enable=""/>	
+			<prop name="exceptionPack" value="" enable=""/>	
+	        <prop name="enableLogger" value="false" enable=""/>
+				
+			
+		    <prop name="mapByIds" value="mapByIds" enable="true"/>
+		    <prop name="map" value="map" enable="true"/>
+            <prop name="listId" value="listId" enable="true"/>
+			<prop name="saveAndGet" value="saveAndGet" enable="true"/>
+			
+	
+		</plugin>
 		
 		
 		 <!-- 
@@ -138,33 +169,29 @@
 		-->
 		<plugin type="org.mybatis.generator.plugins.ServicePlugin">
 		
-			<property name="serviceProject" value="D:\project\test\springboot-base\src\main\java" />
+			<prop name="serviceProject" value="D:\project\test\springboot-base\src\main\java" enable=""/>
+			
+			<prop name="serviceImplProject" value="D:\project\test\springboot-base\src\main\java" enable=""/>
 	
-			<property name="servicePack" value="com.tsyj.service" />
+			<prop name="servicePack" value="com.tsyj.service" enable=""/>
 			
-		    <property name="remote" value="" />
+			<prop name="serviceSuffix" value="Service" enable="true"/>
+			
+			<prop name="serviceImplPack" value="com.tsyj.service.impl" enable=""/>
+			
+		    <prop name="remote" value="" enable=""/>
 		  
-		    <property name="applicationName" value=""/>
-			
-			<property name="serviceImplProject" value="D:\project\test\springboot-base\src\main\java" />
-			
-			<property name="serviceImplPack" value="com.tsyj.service.impl" />
+		    <prop name="applicationName" value="" enable=""/>
 
-
-			<property name="creator" value="creator" />			
-			<property name="updater" value="updater" />		
-			<property name="create_time" value="create_time" />			
-			<property name="update_time" value="update_time" />		
-			<property name="userNameMethod" value="com.tsyj.consts.UserConst.DEFAULT_NAME" />	
-			<property name="dateMethod" value="" />	
-			<property name="exceptionPack" value="" />	
-			<property name="enableLogger" value="false"/>
-				
+	        <prop name="enableLogger" value="false" enable=""/>
 			
-		    <prop name="mapByIds" value="mapByIds" enable="true"/>
+			
+			<prop name="mapByIds" value="mapByIds" enable="true"/>
 		    <prop name="map" value="map" enable="true"/>
             <prop name="listId" value="listId" enable="true"/>
 			<prop name="saveAndGet" value="saveAndGet" enable="true"/>
+			
+	
 		</plugin>
 		
 		
@@ -183,23 +210,23 @@
 		-->
 		<plugin type="org.mybatis.generator.plugins.BusinessPlugin">	
 			
-		    <property name="remoteResource" value="" />
+		    <prop name="remoteResource" value="" enable=""/>
 			
-			<property name="modelConvertUtils" value="com.tsyj.utils.ModelConvertUtils" />
+			<prop name="modelConvertUtils" value="com.tsyj.utils.ModelConvertUtils" enable=""/>
 					
-			<property name="businessProject" value="D:\project\test\springboot-base\src\main\java" />
+			<prop name="businessProject" value="D:\project\test\springboot-base\src\main\java" enable=""/>
 			
-			<property name="businessPack" value="com.tsyj.business" />
+			<prop name="businessPack" value="com.tsyj.business" enable=""/>
 			
-			<property name="businessImplProject" value="D:\project\test\springboot-base\src\main\java" />
+			<prop name="businessImplProject" value="D:\project\test\springboot-base\src\main\java" enable=""/>
 			
-			<property name="businessImplPack" value="com.tsyj.business.impl" />
+			<prop name="businessImplPack" value="com.tsyj.business.impl" enable=""/>
 			
-			<property name="businessSuffix" value="Business" />
-						
-			<property name="enableLogger" value="false"/>
+			<prop name="businessSuffix" value="Business" enable=""/>
 			
-			<property name="exceptionPack" value="" />	
+			<prop name="enableLogger" value="false" enable=""/>
+			
+			<prop name="exceptionPack" value="" enable=""/>	
 			
 			<prop name="doBatchMethod" value="doBatch" enable="true"/>
 			
@@ -220,17 +247,17 @@
 		--> 
 		<plugin type="org.mybatis.generator.plugins.ControllerPlugin">
 		
-			<property name="controllerProject" value="D:\project\test\springboot-base\src\main\java" />
+			<prop name="controllerProject" value="D:\project\test\springboot-base\src\main\java" enable=""/>
 	
-			<property name="controllerPack" value="com.tsyj.controller" />
+			<prop name="controllerPack" value="com.tsyj.controller" enable=""/>
 
-			<property name="controllerSuffix" value="Controller" />
+			<prop name="controllerSuffix" value="Controller" enable=""/>
 			
-			<property name="responseMethod" value="com.tsyj.response.Result:success($)|fail($)|success($,$)"/>
+			<prop name="responseMethod" value="com.tsyj.response.Result:success($)|fail($)|success($,$)" enable=""/>
 			
-			<property name="baseController" value="" />
+			<prop name="baseController" value="" enable=""/>
 			
-			<property name="enableLogger" value="false"/>
+			<prop name="enableLogger" value="false" enable=""/>
 			
 		</plugin>
 		
@@ -274,11 +301,6 @@
 			4.enableVersions       是否启用乐观锁,只有versions配置才行
 			5.逻辑删除列
 		   -->
-			<table tableName="sys_user" domainObjectName="" enableService="true" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="true" delCol="is_del"/>
-			<table tableName="sys_menu" domainObjectName=""  enableService="true" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del"/>
-			<table tableName="sys_role" domainObjectName="" enableService="true" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del"/>		
-			<table tableName="sys_role_menu" domainObjectName="" enableService="true" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del"/>
-			<table tableName="sys_user_role" domainObjectName=""  enableService="true" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="false" delCol="is_del"/>
-			
+			<table tableName="country_code" domainObjectName="" enableManage="true" enableService="true" enableBusiness="true" enableController="false" versionCol="versions" enableVersions="true" delCol="is_del"/>
     </context>
 </generatorConfiguration>
