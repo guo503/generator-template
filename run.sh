@@ -32,4 +32,4 @@ echo "------所选配置文件------: $file_name"
 echo ""
 #执行生成命令
 echo "`java -jar mybatis-generator-core-2.0.0.jar -configfile $file_name -overwrite`"
-IFS=""	
+
