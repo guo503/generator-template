@@ -158,15 +158,6 @@
 				4.applicationName：	     Application类所在包
 				5.serviceImplProject：	 实现类所在模块
 				6.serviceImplPack：	     实现类所在包
-				7.creator                创建人姓名表字段
-				8.updater	             修改人姓名表字段
-				9.createTime	         创建时间表字段
-				10.updateTime	         修改时间表字段
-				11.userNamePack:	     获取用户名方法
-				12.datePack:	         日期格式化方法
-				13.exceptionPack:	     自定义异常类全路径
-				14.enaleVersions:	     是否用乐观锁查询
-				15.generatorBusiness:	 是否生成service
 				16.mapByIds:	         生成mapByIds方法
 				17.map:	                 生成map方法
 				18.listId:	             生成listId方法
