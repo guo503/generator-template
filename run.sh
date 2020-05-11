@@ -11,7 +11,7 @@ if [ -z "$sequence" ]; then
 	exit 1
 fi
 #保存选中文件
-ile_name=""
+file_name=""
 #先设置分隔符为换行符
 IFS=$'\n'
 for i in $file_list
