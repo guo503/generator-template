@@ -90,11 +90,11 @@
 			<prop name="aoSuffix" value="AO" enable=""/>
 			
 			
-			<prop name="generatorPo" value="true" enable=""/>
+			<prop name="generatorPo" value="false" enable=""/>
 			
-			<prop name="generatorMapper" value="true" enable=""/>
+			<prop name="generatorMapper" value="false" enable=""/>
 			
-			<prop name="generatorXml" value="true" enable=""/>
+			<prop name="generatorXml" value="false" enable=""/>
 			
 			
 			<prop name="mapper" value="mybatis.base.mapper.Mapper" enable=""/>
