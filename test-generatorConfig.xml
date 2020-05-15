@@ -30,6 +30,14 @@
 		
 		
 		
+		<!--基础服务项目路径前缀-->
+        <prop name="core_project_prefix" value="VO" enable="true"/>
+		
+	    <!--api项目路径前缀-->
+        <prop name="api_project_prefix" value="VO" enable="true"/>
+		
+		
+		
 		 <!-- 
 			    BaseMethodPlugin插件(xml,service,business,controller,基础方法配置)
 				1.deleteByCondition        				 生成物理删除方法
