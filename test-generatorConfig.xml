@@ -30,12 +30,18 @@
 		
 		
 		
-		<!--基础服务项目路径前缀-->
-        <prop name="core_project_prefix" value="VO" enable="true"/>
+		    <!--基础服务项目路径前缀-->
+        <prop name="core_project_prefix" value="D:\project\ac-core\course" enable="true"/>
+		
+			    <!--基础服务包路径前缀-->
+        <prop name="core_package_prefix" value="com.ac.core.course" enable="true"/>
 		
 	    <!--api项目路径前缀-->
-        <prop name="api_project_prefix" value="VO" enable="true"/>
+        <prop name="api_project_prefix" value="D:\project\ac-parent\ac-crm" enable="true"/>
 		
+	    <!--api包路径前缀-->
+        <prop name="api_package_prefix" value="com.ac.crm" enable="true"/>
+
 		
 		
 		 <!-- 
