@@ -16,7 +16,20 @@
 		<!-- 要继承的page类所在包-->
 		<property name="page" value="com.tsyj.page.Page"/>
 		
-        <property name="javaFileEncoding" value="UTF-8"/>
+        <property name="javaFileEncoding" value="UTF-8"/>		
+		
+		    <!--基础服务项目路径前缀-->
+        <property name="core_project_prefix" value="D:\project\test\springboot-base"/>
+		
+			    <!--基础服务包路径前缀-->
+        <property name="core_package_prefix" value="com.tsyj"/>
+		
+	    <!--api项目路径前缀-->
+        <property name="api_project_prefix" value="D:\project\test\springboot-base"/>
+		
+	    <!--api包路径前缀-->
+        <property name="api_package_prefix" value="com.tsyj"/>
+		
 		
 		<!-- po要继承的page全路径-->
 		<!-- <property name="page" value="com.panda.sdk.Page"/>-->
@@ -27,20 +40,6 @@
 		 <plugin type="org.mybatis.generator.plugins.LombokPlugin" >
             <property name="hasLombok" value="true"/>
         </plugin>
-		
-		
-		
-		    <!--基础服务项目路径前缀-->
-        <prop name="core_project_prefix" value="D:\project\ac-core\course" enable="true"/>
-		
-			    <!--基础服务包路径前缀-->
-        <prop name="core_package_prefix" value="com.ac.core.course" enable="true"/>
-		
-	    <!--api项目路径前缀-->
-        <prop name="api_project_prefix" value="D:\project\ac-parent\ac-crm" enable="true"/>
-		
-	    <!--api包路径前缀-->
-        <prop name="api_package_prefix" value="com.ac.crm" enable="true"/>
 
 		
 		
@@ -90,16 +89,16 @@
 		-->
 		<plugin type="org.mybatis.generator.plugins.ExtendModelPlugin">
 						
-			<prop name="voProject" value="D:\project\test\springboot-base\src\main\java" enable="true"/>
+			<path name="voProject" value="src\main\java" type="api"/>
 	
-			<prop name="voPack" value="com.tsyj.vo" enable=""/>
+			<pack name="voPack" value="vo" type="api"/>
 
 			<prop name="voSuffix" value="VO" enable=""/>
 			
 			
-			<prop name="aoProject" value="D:\project\test\springboot-base\src\main\java" enable="true"/>
+			<path name="aoProject" value="src\main\java" type="api"/>
 	
-			<prop name="aoPack" value="com.tsyj.ao" enable=""/>
+			<pack name="aoPack" value="ao" type="api"/>
 
 			<prop name="aoSuffix" value="AO" enable=""/>
 			
@@ -134,13 +133,13 @@
 		
 	    <plugin type="org.mybatis.generator.plugins.ManagePlugin">
 		
-		    <prop name="manageProject" value="D:\project\test\springboot-base\src\main\java" enable="true"/>
+		    <path name="manageProject" value="src\main\java" type="core"/>
 			
-			<prop name="manageImplProject" value="D:\project\test\springboot-base\src\main\java" enable="true"/>
+			<path name="manageImplProject" value="src\main\java" type="core"/>
 	
-			<prop name="managePack" value="com.tsyj.service.business" enable="true"/>
+			<pack name="managePack" value="service.business" type="core"/>
 			
-			<prop name="manageImplPack" value="com.tsyj.service.business.impl" enable="true"/>
+			<pack name="manageImplPack" value="service.business.impl" type="core"/>
 		     
 			<prop name="manageSuffix" value="Business" enable="true"/>
 
@@ -179,15 +178,15 @@
 		-->
 		<plugin type="org.mybatis.generator.plugins.ServicePlugin">
 		
-			<prop name="serviceProject" value="D:\project\test\springboot-base\src\main\java" enable=""/>
+			<path name="serviceProject" value="src\main\java" type="core"/>
 			
-			<prop name="serviceImplProject" value="D:\project\test\springboot-base\src\main\java" enable=""/>
+			<path name="serviceImplProject" value="src\main\java" type="core"/>
 	
-			<prop name="servicePack" value="com.tsyj.service" enable=""/>
+			<pack name="servicePack" value="service" type="core"/>
 			
 			<prop name="serviceSuffix" value="Service" enable="true"/>
 			
-			<prop name="serviceImplPack" value="com.tsyj.service.impl" enable=""/>
+			<pack name="serviceImplPack" value="service.impl" type="core"/>
 			
 		    <prop name="remote" value="" enable=""/>
 		  
@@ -224,13 +223,13 @@
 			
 			<prop name="modelConvertUtils" value="com.tsyj.utils.ModelConvertUtils" enable=""/>
 					
-			<prop name="businessProject" value="D:\project\test\springboot-base\src\main\java" enable=""/>
+			<path name="businessProject" value="src\main\java" type="api"/>
 			
-			<prop name="businessPack" value="com.tsyj.business" enable=""/>
+			<pack name="businessPack" value="business" type="api"/>
 			
-			<prop name="businessImplProject" value="D:\project\test\springboot-base\src\main\java" enable=""/>
+			<path name="businessImplProject" value="src\main\java" type="api"/>
 			
-			<prop name="businessImplPack" value="com.tsyj.business.impl" enable=""/>
+			<pack name="businessImplPack" value="business.impl" type="api"/>
 			
 			<prop name="businessSuffix" value="Business" enable=""/>
 			
@@ -238,7 +237,7 @@
 			
 			<prop name="exceptionPack" value="" enable=""/>	
 			
-			<prop name="doBatchMethod" value="doBatch" enable="true"/>
+			<prop name="doBatchMethod" value="doBatch" enable=""/>
 			
 		</plugin>
 		
@@ -257,9 +256,9 @@
 		--> 
 		<plugin type="org.mybatis.generator.plugins.ControllerPlugin">
 		
-			<prop name="controllerProject" value="D:\project\test\springboot-base\src\main\java" enable=""/>
+			<path name="controllerProject" value="src\main\java" type="api"/>
 	
-			<prop name="controllerPack" value="com.tsyj.controller" enable=""/>
+			<pack name="controllerPack" value="controller" type="api"/>
 
 			<prop name="controllerSuffix" value="Controller" enable=""/>
 			
@@ -291,16 +290,16 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!-- 生成模型的包名和位置-->
-        <javaModelGenerator targetPackage="com.tsyj.model" targetProject="D:\project\test\springboot-base\src\main\java">
+        <javaModelGenerator targetPackage="model" targetProject="src\main\java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!-- 生成映射文件的包名和位置-->
-        <sqlMapGenerator targetPackage="mapper" targetProject="D:\project\test\springboot-base\src\main\resources">
+        <sqlMapGenerator targetPackage="mapper" targetProject="src\main\resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!-- 生成DAO的包名和位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.tsyj.mapper" targetProject="D:\project\test\springboot-base\src\main\java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="mapper" targetProject="src\main\java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
