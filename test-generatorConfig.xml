@@ -93,14 +93,14 @@
 	
 			<pack name="voPack" value="vo" type="api"/>
 
-			<prop name="voSuffix" value="VO" enable=""/>
+			<prop name="voSuffix" value="VO" enable="true"/>
 			
 			
 			<path name="aoProject" value="src\main\java" type="api"/>
 	
 			<pack name="aoPack" value="ao" type="api"/>
 
-			<prop name="aoSuffix" value="AO" enable=""/>
+			<prop name="aoSuffix" value="AO" enable="true"/>
 			
 			
 			<prop name="generatorPo" value="false" enable=""/>
