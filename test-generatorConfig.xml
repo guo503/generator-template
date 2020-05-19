@@ -31,9 +31,6 @@
         <property name="api_package_prefix" value="com.tsyj"/>
 		
 		
-		<!-- po要继承的page全路径-->
-		<!-- <property name="page" value="com.panda.sdk.Page"/>-->
-		
 		 <!-- 配置pojo的序列化 -->
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
 		  <!-- 去掉get,set方法，添加Lombok注解-->
@@ -69,11 +66,9 @@
 		
 		  <!-- 
 			   ExtendModelPlugin插件(生成vo,cond,mapper配置)
-				1.generatorVo：          是否重新生成vo
 				2.voProject：	         vo所在模块
 				3.voPack：	             vo类所在包
 				4.voSuffix：	         vo类后缀
-				5.condSuffix:            cond类后缀
 				6.generatorPo:           是否重新生成po：     不写或者空或者false,不生成
 				7.generatorMapper:       是否重新生成Mapper:  不写或者空或者false,不生成
 				8.generatorXml:          是否重新生成Xml：    不写或者空或者false,不生成
