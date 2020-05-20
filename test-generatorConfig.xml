@@ -98,28 +98,28 @@
 			<prop name="aoSuffix" value="AO" enable="true"/>
 			
 			
-			<prop name="generatorPo" value="true" enable=""/>
+			<prop name="generatorPo" value="true"/>
 			
-			<prop name="generatorMapper" value="true" enable=""/>
+			<prop name="generatorMapper" value="true"/>
 			
-			<prop name="generatorXml" value="true" enable=""/>
+			<prop name="generatorXml" value="true"/>
 			
 			
-			<prop name="mapper" value="mybatis.base.mapper.Mapper" enable=""/>
+			<prop name="mapper" value="mybatis.base.mapper.Mapper"/>
 					
-			<prop name="softDeleteMapper" value="mybatis.base.mapper.SoftDeleteMapper" enable=""/>
+			<prop name="softDeleteMapper" value="mybatis.base.mapper.SoftDeleteMapper"/>
 							
-		    <prop name="table" value="mybatis.core.annotation.Table" enable=""/>
+		    <prop name="table" value="mybatis.core.annotation.Table"/>
 			
-			<prop name="id" value="mybatis.core.annotation.Id" enable=""/>
+			<prop name="id" value="mybatis.core.annotation.Id"/>
 			
-			<prop name="version" value="mybatis.core.annotation.Version" enable=""/>
+			<prop name="version" value="mybatis.core.annotation.Version" />
 			
-		    <prop name="logicDelete" value="mybatis.core.annotation.LogicDelete" enable=""/>
+		    <prop name="logicDelete" value="mybatis.core.annotation.LogicDelete" />
 			
-			<prop name="condition" value="mybatis.core.entity.Condition" enable=""/>
+			<prop name="condition" value="mybatis.core.entity.Condition" />
 			
-			<prop name="limitCondition" value="mybatis.core.entity.LimitCondition" enable=""/>
+			<prop name="limitCondition" value="mybatis.core.entity.LimitCondition"/>
 			
 		</plugin>
 		
@@ -139,14 +139,14 @@
 			<prop name="manageSuffix" value="Business" enable="true"/>
 
 
-			<prop name="creator" value="creator" enable=""/>			
-			<prop name="updater" value="updater" enable=""/>		
-			<prop name="create_time" value="create_time" enable=""/>			
-			<prop name="update_time" value="update_time" enable=""/>		
-			<prop name="userNameMethod" value="com.tsyj.consts.UserConst.DEFAULT_NAME" enable=""/>	
-			<prop name="dateMethod" value="" enable=""/>	
-			<prop name="exceptionPack" value="" enable=""/>	
-	        <prop name="enableLogger" value="false" enable=""/>
+			<prop name="creator" value="creator" />			
+			<prop name="updater" value="updater" />		
+			<prop name="create_time" value="create_time" />			
+			<prop name="update_time" value="update_time" />		
+			<prop name="userNameMethod" value="com.tsyj.consts.UserConst.DEFAULT_NAME" />	
+			<prop name="dateMethod" value=""/>	
+			<prop name="exceptionPack" value=""/>	
+	        <prop name="enableLogger" value="false"/>
 				
 			
 		    <prop name="mapByIds" value="mapByIds" enable="true"/>
@@ -183,11 +183,11 @@
 			
 			<pack name="serviceImplPack" value="service.impl" type="core"/>
 			
-		    <prop name="remote" value="" enable=""/>
+		    <prop name="remote" value=""/>
 		  
-		    <prop name="applicationName" value="" enable=""/>
+		    <prop name="applicationName" value=""/>
 
-	        <prop name="enableLogger" value="false" enable=""/>
+	        <prop name="enableLogger" value="false"/>
 			
 			
 			<prop name="mapByIds" value="mapByIds" enable="true"/>
@@ -214,9 +214,9 @@
 		-->
 		<plugin type="org.mybatis.generator.plugins.BusinessPlugin">	
 			
-		    <prop name="remoteResource" value="" enable=""/>
+		    <prop name="remoteResource" value=""/>
 			
-			<prop name="modelConvertUtils" value="com.tsyj.utils.ModelConvertUtils" enable=""/>
+			<prop name="modelConvertUtils" value="com.tsyj.utils.ModelConvertUtils"/>
 					
 			<path name="businessProject" value="src\main\java" type="api"/>
 			
@@ -228,9 +228,9 @@
 			
 			<prop name="businessSuffix" value="Business" enable=""/>
 			
-			<prop name="enableLogger" value="false" enable=""/>
+			<prop name="enableLogger" value="false"/>
 			
-			<prop name="exceptionPack" value="" enable=""/>	
+			<prop name="exceptionPack" value="" />	
 			
 			<prop name="doBatchMethod" value="doBatch" enable=""/>
 			
@@ -255,13 +255,13 @@
 	
 			<pack name="controllerPack" value="controller" type="api"/>
 
-			<prop name="controllerSuffix" value="Controller" enable=""/>
+			<prop name="controllerSuffix" value="Controller"/>
 			
-			<prop name="responseMethod" value="com.tsyj.response.Result:success($)|fail($)|success($,$)" enable=""/>
+			<prop name="responseMethod" value="com.tsyj.response.Result:success($)|fail($)|success($,$)"/>
 			
-			<prop name="baseController" value="" enable=""/>
+			<prop name="baseController" value=""/>
 			
-			<prop name="enableLogger" value="false" enable=""/>
+			<prop name="enableLogger" value="false"/>
 			
 		</plugin>
 		
@@ -305,6 +305,9 @@
 			4.enableVersions       是否启用乐观锁,只有versions配置才行
 			5.逻辑删除列
 		   -->
-			<table tableName="country_code" domainObjectName="" enableManage="true" enableService="true" enableBusiness="true" enableController="true" versionCol="versions" enableVersions="true" delCol="is_del"/>
+			<table tableName="country_code" domainObjectName="" enableManage="true" enableService="true" enableBusiness="true" enableController="true">
+			   <prop name="versionCol"  value="version" enable="false"/>
+			   <prop name="delCol"  value="is_del" />
+			</table>
     </context>
 </generatorConfiguration>
