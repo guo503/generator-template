@@ -22,7 +22,7 @@ for i in $file_list
 		    break;
 		  fi
 	done
-#恢复分隔符
+
 if [ -z "$file_name" ]; then
     echo "文件序号不存在!"
 	exit 1
