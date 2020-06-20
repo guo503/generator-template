@@ -128,6 +128,8 @@
 		
 	    <plugin type="org.mybatis.generator.plugins.ManagePlugin">
 		
+			<prop name="enableAnnotation" value="true"/>
+		
 		    <path name="manageProject" value="src\main\java" type="core"/>
 			
 			<path name="manageImplProject" value="src\main\java" type="core"/>
@@ -173,6 +175,8 @@
 		-->
 		<plugin type="org.mybatis.generator.plugins.ServicePlugin">
 		
+			<prop name="enableAnnotation" value="true"/>
+		
 			<path name="serviceProject" value="src\main\java" type="core"/>
 			
 			<path name="serviceImplProject" value="src\main\java" type="core"/>
@@ -213,6 +217,8 @@
 				10.exceptionPack:	            自定义异常类全路径
 		-->
 		<plugin type="org.mybatis.generator.plugins.BusinessPlugin">	
+		
+			<prop name="enableAnnotation" value="true"/>
 			
 		    <prop name="remoteResource" value=""/>
 			
@@ -233,6 +239,7 @@
 			<prop name="exceptionPack" value="" />	
 			
 			<prop name="doBatchMethod" value="doBatch" enable=""/>
+		
 			
 		</plugin>
 		
@@ -250,6 +257,8 @@
 				6.enableLogger                  是否生成logger日志
 		--> 
 		<plugin type="org.mybatis.generator.plugins.ControllerPlugin">
+		
+			<prop name="enableAnnotation" value="true"/>
 		
 			<path name="controllerProject" value="src\main\java" type="api"/>
 	
@@ -279,7 +288,7 @@
         </commentGenerator>
         <!--数据库链接URL，用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/tsyj?characterEncoding=utf8&amp;useInformationSchema=true&amp;useSSL=false" userId="root"
-                        password="root">
+                        password="123456">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
