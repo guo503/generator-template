@@ -134,11 +134,11 @@
 			
 			<path name="manageImplProject" value="src\main\java" type="core"/>
 	
-			<pack name="managePack" value="service.business" type="core"/>
+			<pack name="managePack" value="service.manage" type="core"/>
 			
-			<pack name="manageImplPack" value="service.business.impl" type="core"/>
+			<pack name="manageImplPack" value="service.manage.impl" type="core"/>
 		     
-			<prop name="manageSuffix" value="Business" enable="true"/>
+			<prop name="manageSuffix" value="Manage" enable="true"/>
 
 	        <prop name="enableLogger" value="false"/>
 				
