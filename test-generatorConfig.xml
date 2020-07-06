@@ -60,6 +60,10 @@
 		    <prop name="list" value="list" enable="true"/>
 			<prop name="countByCondition" value="countByCondition" enable="true"/>
 		    <prop name="listByCondition" value="listByCondition" enable="true"/>
+			<prop name="mapByIds" value="mapByIds" enable="true"/>
+		    <prop name="map" value="map" enable="true"/>
+            <prop name="listId" value="listId" enable="true"/>
+			<prop name="saveAndGet" value="saveAndGet" enable="true"/>
 		</plugin>
 		
 		
@@ -140,14 +144,7 @@
 		     
 			<prop name="manageSuffix" value="Manage" enable="true"/>
 
-	        <prop name="enableLogger" value="false"/>
-				
-			
-		    <prop name="mapByIds" value="mapByIds" enable="true"/>
-		    <prop name="map" value="map" enable="true"/>
-            <prop name="listId" value="listId" enable="true"/>
-			<prop name="saveAndGet" value="saveAndGet" enable="true"/>
-			
+	        <prop name="enableLogger" value="false"/>		
 	
 		</plugin>
 		
