@@ -257,7 +257,7 @@
 			
 			<prop name="responseMethod" value="com.tsyj.response.Result:success($)|fail($)|success($,$)"/>
 			
-			<prop name="baseController" value=""/>
+			<prop name="baseController" value="mybatis.spring.controller.BaseController"/>
 			
 			<prop name="enableLogger" value="false"/>
 			
