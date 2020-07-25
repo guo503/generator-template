@@ -92,18 +92,18 @@
 			<prop name="voSuffix" value="VO" enable="true"/>
 			
 			
-			<path name="aoProject" value="src\main\java" type="api"/>
+			<path name="queryProject" value="src\main\java" type="api"/>
 	
-			<pack name="aoPack" value="ao" type="api"/>
+			<pack name="queryPack" value="query" type="api"/>
 
-			<prop name="aoSuffix" value="AO" enable="true"/>
+			<prop name="querySuffix" value="Query" enable="true"/>
 			
 			
 			<prop name="generatorPo" value="true"/>
 			
 			<prop name="generatorMapper" value="true"/>
 			
-			<prop name="generatorXml" value="false"/>
+			<prop name="generatorXml" value="true"/>
 			
 			
 			<prop name="mapper" value="mybatis.base.mapper.Mapper"/>
