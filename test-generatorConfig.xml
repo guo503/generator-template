@@ -37,34 +37,6 @@
 
 		
 		
-		 <!-- 
-			    BaseMethodPlugin插件(xml,service,business,controller,基础方法配置)
-				1.deleteByCondition        				 生成物理删除方法
-				2.enableInsertSelective	        				 生成save方法
-				3.enableSelectByPrimaryKey	             		 生成get方法
-				4.enableUpdateByPrimaryKeySelective	         	 生成update方法
-				5.countByCondition	                  			 生成listByIds方法
-				6.listByCondition	         					 生成count方法
-			    7.listByCondition	         					 生成list方法
-		-->
-		<plugin type="org.mybatis.generator.plugins.BaseMethodPlugin">		
-		    <prop name="deleteByCondition" value="" enable="true"/>
-			<prop name="insertSelective" value="save" enable="true"/>
-			<prop name="selectByPrimaryKey" value="get" enable="true"/>
-			<prop name="updateByPrimaryKeySelective" value="update" enable="true"/>
-			<prop name="listByIds" value="listByIds" enable="true"/>
-		    <prop name="count" value="count" enable="true"/>
-		    <prop name="list" value="list" enable="true"/>
-			<prop name="countByCondition" value="countByCondition" enable="true"/>
-		    <prop name="listByCondition" value="listByCondition" enable="true"/>
-			<prop name="mapByIds" value="mapByIds" enable="true"/>
-		    <prop name="map" value="map" enable="true"/>
-            <prop name="listId" value="listId" enable="true"/>
-			<prop name="saveAndGet" value="saveAndGet" enable="true"/>
-		</plugin>
-		
-		
-		
 		  <!-- 
 			   ExtendModelPlugin插件(生成vo,cond,mapper配置)
 				2.voProject：	         vo所在模块
@@ -172,10 +144,6 @@
 			<prop name="serviceSuffix" value="Service" enable="true"/>
 			
 			<pack name="serviceImplPack" value="service.impl" type="core"/>
-			
-		    <prop name="remote" value=""/>
-		  
-		    <prop name="applicationName" value=""/>
 
 	        <prop name="enableLogger" value="false"/>
 	
@@ -200,8 +168,6 @@
 			<prop name="enableAnnotation" value="true"/>
 			
 		    <prop name="remoteResource" value=""/>
-			
-			<prop name="modelConvertUtils" value="com.tsyj.utils.ModelConvertUtils"/>
 					
 			<path name="businessProject" value="src\main\java" type="api"/>
 			
@@ -214,10 +180,6 @@
 			<prop name="businessSuffix" value="Business" enable=""/>
 			
 			<prop name="enableLogger" value="false"/>
-			
-			<prop name="exceptionPack" value="" />	
-			
-			<prop name="doBatchMethod" value="doBatch" enable="true"/>
 		
 			
 		</plugin>
@@ -244,10 +206,6 @@
 			<pack name="controllerPack" value="controller" type="api"/>
 
 			<prop name="controllerSuffix" value="Controller"/>
-			
-			<prop name="responseMethod" value="com.tsyj.response.Result:success($)|fail($)|success($,$)"/>
-			
-			<prop name="baseController" value="mybatis.spring.controller.BaseController"/>
 			
 			<prop name="enableLogger" value="false"/>
 			
@@ -297,5 +255,6 @@
 			   <prop name="versionCol"  value="version" enable="false"/>
 			   <prop name="delCol"  value="is_del" />
 			</table>
+			
     </context>
 </generatorConfiguration>
