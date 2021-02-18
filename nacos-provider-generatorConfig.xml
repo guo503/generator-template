@@ -16,16 +16,16 @@
         <property name="javaFileEncoding" value="UTF-8"/>		
 		
 		    <!--基础服务项目路径前缀-->
-        <property name="core_project_prefix" value="D:\project\test\springboot-base"/>
+        <property name="core_project_prefix" value="D:\project\test\springcloud-nacos\nacos-provider"/>
 		
 			    <!--基础服务包路径前缀-->
-        <property name="core_package_prefix" value="com.tsyj"/>
+        <property name="core_package_prefix" value="com.nacos.provider"/>
 		
 	    <!--api项目路径前缀-->
-        <property name="api_project_prefix" value="D:\project\test\springboot-base"/>
+        <property name="api_project_prefix" value="D:\project\test\springcloud-nacos\nacos-provider"/>
 		
 	    <!--api包路径前缀-->
-        <property name="api_package_prefix" value="com.tsyj"/>
+        <property name="api_package_prefix" value="com.nacos.provider"/>
 		
 		
 		 <!-- 配置pojo的序列化 -->
@@ -45,14 +45,6 @@
 				6.generatorPo:           是否重新生成po：     不写或者空或者false,不生成
 				7.generatorMapper:       是否重新生成Mapper:  不写或者空或者false,不生成
 				8.generatorXml:          是否重新生成Xml：    不写或者空或者false,不生成
-				9.mapper:                mapper继承的基类
-			    9.softDeleteMapper:      mapper继承的逻辑删除基类
-				10.table:                po类表注释
-		        11.id:                   主键注解
-				12.version:              乐观锁注解
-				13.condition:            Condition查询类
-				14.limitCondition:       limitCondition查询类
-				15.logicDelete           逻辑删除注解
 				
 		-->
 		<plugin type="org.mybatis.generator.plugins.ExtendModelPlugin">
@@ -63,14 +55,6 @@
 
 			<prop name="voSuffix" value="VO" enable="true"/>
 			
-			
-			<path name="queryProject" value="src\main\java" type="api"/>
-	
-			<pack name="queryPack" value="query" type="api"/>
-
-			<prop name="querySuffix" value="Query" enable="true"/>
-			
-			
 			<prop name="generatorPo" value="true"/>
 			
 			<prop name="generatorMapper" value="true"/>
@@ -78,44 +62,16 @@
 			<prop name="generatorXml" value="true"/>
 			
 			
-			<prop name="mapper" value="mybatis.base.mapper.Mapper"/>
-					
-			<prop name="softDeleteMapper" value="mybatis.base.mapper.SoftDeleteMapper"/>
-							
-		    <prop name="table" value="mybatis.core.annotation.Table"/>
-			
-			<prop name="id" value="mybatis.core.annotation.Id"/>
-			
-			<prop name="version" value="mybatis.core.annotation.Version" />
-			
-		    <prop name="logicDelete" value="mybatis.core.annotation.LogicDelete" />
-			
-			<prop name="condition" value="mybatis.core.entity.Condition" />
-			
-			<prop name="limitCondition" value="mybatis.core.entity.LimitCondition"/>
+			<!--mybatisplus基础注解-->
+			<prop name="TableName" value="com.baomidou.mybatisplus.annotation.TableName"/>
+			<prop name="TableId" value="com.baomidou.mybatisplus.annotation.TableId"/>
+			<prop name="IdType" value="com.baomidou.mybatisplus.annotation.IdType"/>
+			<prop name="BaseMapper" value="com.baomidou.mybatisplus.core.mapper.BaseMapper"/>
+			<prop name="IService" value="com.baomidou.mybatisplus.extension.service.IService"/>
+			<prop name="ServiceImpl" value="com.baomidou.mybatisplus.extension.service.impl.ServiceImpl"/>
 			
 		</plugin>
 		
-		
-		
-		
-	    <plugin type="org.mybatis.generator.plugins.ManagePlugin">
-		
-			<prop name="enableAnnotation" value="true"/>
-		
-		    <path name="manageProject" value="src\main\java" type="core"/>
-			
-			<path name="manageImplProject" value="src\main\java" type="core"/>
-	
-			<pack name="managePack" value="service.manage" type="core"/>
-			
-			<pack name="manageImplPack" value="service.manage.impl" type="core"/>
-		     
-			<prop name="manageSuffix" value="Manage" enable="true"/>
-
-	        <prop name="enableLogger" value="false"/>		
-	
-		</plugin>
 		
 		
 		 <!-- 
@@ -151,41 +107,6 @@
 		
 		
 		
-		<!-- 
-			businessPlugin生成插件
-				1.remoteResource：	            remoteResource类所在包
-				2.businessProject：	            business类所在模块
-				3.businessPack：	            business类所在包
-				5.businessImplProject：	        business实现类所在模块
-				6.businessImplPack：	        business实现类所在包
-				7.businessSuffix                business类后缀
-				8.doBatchMethod                 是否生成doBatch方法
-				9.enableLogger                  是否生成logger日志
-				10.exceptionPack:	            自定义异常类全路径
-		-->
-		<plugin type="org.mybatis.generator.plugins.BusinessPlugin">	
-		
-			<prop name="enableAnnotation" value="true"/>
-			
-		    <prop name="remoteResource" value=""/>
-					
-			<path name="businessProject" value="src\main\java" type="api"/>
-			
-			<pack name="businessPack" value="business" type="api"/>
-			
-			<path name="businessImplProject" value="src\main\java" type="api"/>
-			
-			<pack name="businessImplPack" value="business.impl" type="api"/>
-			
-			<prop name="businessSuffix" value="Business" enable=""/>
-			
-			<prop name="enableLogger" value="false"/>
-		
-			
-		</plugin>
-		
-		
-		
 		
 		
 		<!-- 
@@ -206,6 +127,8 @@
 			<pack name="controllerPack" value="controller" type="api"/>
 
 			<prop name="controllerSuffix" value="Controller"/>
+			
+			<prop name="baseController" value="com.nacos.common.controller.BaseController"/>
 			
 			<prop name="enableLogger" value="false"/>
 			
@@ -231,7 +154,7 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!-- 生成模型的包名和位置-->
-        <javaModelGenerator targetPackage="model" targetProject="src\main\java">
+        <javaModelGenerator targetPackage="entity" targetProject="src\main\java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -251,10 +174,8 @@
 			4.enableVersions       是否启用乐观锁,只有versions配置才行
 			5.逻辑删除列
 		   -->
-			<table tableName="country_code" domainObjectName="" enableManage="true" enableService="true" enableBusiness="true" enableController="true">
-			   <prop name="versionCol"  value="version" enable="false"/>
-			   <prop name="delCol"  value="is_del" />
-			</table>
+		<table tableName="user" domainObjectName="" enableService="true" enableController="true"/>
+			  
 			
     </context>
 </generatorConfiguration>
